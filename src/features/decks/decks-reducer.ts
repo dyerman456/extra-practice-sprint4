@@ -27,11 +27,4 @@ export const setDecksAC = (decks: DecksType[]) => {
   } as const
 }
 
-type DecksActions = SetDecksType
-
-type SetDecksType = {
-  type: 'SET_DECKS'
-  payload: {
-    decks: DecksType[]
-  }
-}
+type DecksActions = ReturnType<typeof setDecksAC>

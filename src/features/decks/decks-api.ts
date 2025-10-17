@@ -13,28 +13,30 @@ export const decksApi = {
   },
 }
 
-type FetchDecksResponse = {
-  items: [
-    {
-      isFavorite: boolean
-      author: {
-        id: string
-        name: string
-      }
-      id: string
-      userId: string
-      name: string
-      isPrivate: boolean
-      cover: string
-      created: string
-      updated: string
-      cardsCount: number
-    },
-  ]
-  pagination: {
-    currentPage: number
-    itemsPerPage: number
-    totalPages: number
-    totalItems: number
+export type FetchDecksResponse = {
+  items: DecksType[]
+  pagination: PaginationType
+}
+
+export type DecksType = {
+  isFavorite: boolean
+  author: {
+    id: string
+    name: string
   }
+  id: string
+  userId: string
+  name: string
+  isPrivate: boolean
+  cover: string
+  created: string
+  updated: string
+  cardsCount: number
+}
+
+export type PaginationType = {
+  currentPage: number
+  itemsPerPage: number
+  totalPages: number
+  totalItems: number
 }

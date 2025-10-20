@@ -8,7 +8,7 @@ export const useFetchDecks = () => {
   const decks = useAppSelector(selectDecks)
 
   useEffect(() => {
-    dispatch(fetchDecksTC)
+    dispatch(fetchDecksTC())
   }, [dispatch])
 
   return {

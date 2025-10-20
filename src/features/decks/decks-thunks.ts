@@ -8,8 +8,7 @@ export const fetchDecksTC = () => (dispatch: Dispatch) => {
   })
 }
 
-export const addDeckTC = (params: AddDeckParams) => (dispatch: Dispatch) => {
-  decksApi.addDeck(params).then((res) => {
-    dispatch(addDeckAC(res.data))
-  })
+export const addDeckTC = (params: AddDeckParams) => async (dispatch: Dispatch) => {
+  const res = await decksApi.addDeck(params)
+  return dispatch(addDeckAC(res.data))
 }
